@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Juegos para Calmar la Ansiedad</title>
+    <title>Relajación · Switch</title>
+
     <style>
         :root {
             --bg: #f5f7fb;
@@ -312,59 +313,21 @@
             background: #35c759;
             transition: width .3s;
         }
-
-        @media (orientation:portrait) {
-            .phone {
-                flex-direction: column;
-            }
-
-            .levels-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .controls {
-                grid-template-columns: 1fr;
-                justify-items: center;
-            }
-
-            .btn-main {
-                width: 100px;
-                height: 100px;
-            }
-        }
-
-        @media (orientation:landscape) {
-            .phone {
-                flex-direction: row;
-                flex-wrap: wrap;
-            }
-
-            .levels-grid {
-                grid-template-columns: repeat(4, 1fr);
-            }
-
-            .controls {
-                grid-template-columns: repeat(3, 1fr);
-            }
-
-            .btn-main {
-                width: 80px;
-                height: 80px;
-            }
-        }
     </style>
 </head>
 
 <body>
+
     <div class="phone">
+
         <div class="top-bar">
             <div class="user-select">
                 Usuario:
                 <select id="userSelect">
-                    <option value="1">Papa (clave 1)</option>
-                    <option value="2">Mama (clave 2)</option>
-                    <option value="3">Romeo (clave 3)</option>
-                    <option value="4">Avril (clave 4)</option>
+                    <option value="1">Papa</option>
+                    <option value="2">Mama</option>
+                    <option value="3">Romeo</option>
+                    <option value="4">Avril</option>
                 </select>
             </div>
             <small id="userStatus">Usuario: Papa · Progreso: 0 / 8</small>
@@ -372,64 +335,59 @@
 
         <div class="joycons">
             <div class="joycon red"><span>L</span></div>
+
             <div class="header">
-                <div class="header-title">Juegos para Calmar la Ansiedad</div>
-                <div class="header-sub">20 Niveles de Calma</div>
+                <div class="header-title">Juegos de Relajación</div>
+                <div class="header-sub">8 Niveles</div>
                 <div class="header-coins">
-                    <div class="coin"></div><span id="coinCount">100</span>
+                    <div class="coin"></div>
+                    <span id="coinCount">100</span>
                 </div>
             </div>
+
             <div class="joycon blue"><span>R</span></div>
         </div>
 
         <div class="levels-grid" id="levelsGrid">
             <div class="level-card" data-level="1">
                 <div class="level-icon">🐉</div>
-                <div class="level-title">Respiración Dragón</div>
-                <div class="level-tag">Control</div>
-                <div class="level-star">★</div>
+                <div class="level-title">Dragón</div>
+                <div class="level-tag">Respira</div>
             </div>
             <div class="level-card" data-level="2">
                 <div class="level-icon">🚦</div>
-                <div class="level-title">Semáforo Emocional</div>
-                <div class="level-tag">Frena</div>
-                <div class="level-star">★</div>
+                <div class="level-title">Semáforo</div>
+                <div class="level-tag">Control</div>
             </div>
             <div class="level-card" data-level="3">
                 <div class="level-icon">🦸</div>
-                <div class="level-title">Superhéroe Fuerte</div>
-                <div class="level-tag">Confianza</div>
-                <div class="level-star">★</div>
+                <div class="level-title">Superhéroe</div>
+                <div class="level-tag">Fuerza</div>
             </div>
             <div class="level-card" data-level="4">
                 <div class="level-icon">📦</div>
-                <div class="level-title">Caja de Calma</div>
-                <div class="level-tag">Relajación</div>
-                <div class="level-star">★</div>
+                <div class="level-title">Caja Calma</div>
+                <div class="level-tag">Objetos</div>
             </div>
             <div class="level-card" data-level="5">
                 <div class="level-icon">🎈</div>
-                <div class="level-title">Globo Gigante</div>
-                <div class="level-tag">Respira</div>
-                <div class="level-star">★</div>
+                <div class="level-title">Globo</div>
+                <div class="level-tag">Aire</div>
             </div>
             <div class="level-card" data-level="6">
                 <div class="level-icon">🤖</div>
-                <div class="level-title">Robot y Gelatina</div>
-                <div class="level-tag">Tensa</div>
-                <div class="level-star">★</div>
+                <div class="level-title">Robot</div>
+                <div class="level-tag">Tensión</div>
             </div>
             <div class="level-card" data-level="7">
                 <div class="level-icon">📓</div>
-                <div class="level-title">Diario Aventuras</div>
-                <div class="level-tag">Misión</div>
-                <div class="level-star">★</div>
+                <div class="level-title">Diario</div>
+                <div class="level-tag">Escribir</div>
             </div>
             <div class="level-card" data-level="8">
                 <div class="level-icon">⏱️</div>
-                <div class="level-title">Minuto Tranquilo</div>
+                <div class="level-title">Minuto</div>
                 <div class="level-tag">60s</div>
-                <div class="level-star">★</div>
             </div>
         </div>
 
@@ -478,8 +436,10 @@
                 <span>Logros</span>
             </div>
         </div>
+
     </div>
 
+    <!-- Modal -->
     <div id="modal"
         style="position:fixed;inset:0;background:rgba(0,0,0,.6);display:none;justify-content:center;align-items:center;">
         <div style="background:white;padding:20px;width:80%;max-width:300px;border-radius:16px;text-align:center;">
@@ -494,22 +454,24 @@
     </div>
 
     <script>
+        /* Explicaciones */
         const TIP_EXPLICACIONES = {
-            1: {titulo: "Respiración del Dragón", texto: "Inhala profundo por la nariz y exhala largo como si fueras un dragón.", accion: "respirar"},
+            1: {titulo: "Respiración del Dragón", texto: "Inhala profundo y exhala largo como un dragón.", accion: "respirar"},
             2: {titulo: "Semáforo Emocional", texto: "Rojo: paro. Amarillo: pienso. Verde: actúo.", accion: "pausa"},
             3: {titulo: "Superhéroe Fuerte", texto: "Postura de superhéroe durante 1 minuto.", accion: "postura"},
             4: {titulo: "Caja de Calma", texto: "Usa objetos que te tranquilizan.", accion: "sensorial"},
             5: {titulo: "Globo Gigante", texto: "Cada respiración infla un globo imaginario enorme.", accion: "respirar"},
-            6: {titulo: "Robot y Gelatina", texto: "Tensa el cuerpo como robot y luego suéltalo como gelatina.", accion: "tensar"},
+            6: {titulo: "Robot y Gelatina", texto: "Tensa el cuerpo como robot y luego suéltalo.", accion: "tensar"},
             7: {titulo: "Diario de Aventuras", texto: "Escribe tu día como misión épica.", accion: "escribir"},
             8: {titulo: "Minuto Tranquilo", texto: "Respira lento durante 60 segundos.", accion: "cronometro"}
         };
 
+        /* Misiones */
         const MISIONES = [
             {id: 1, texto: "Respiración del Dragón 3 veces", accion: "respirar"},
             {id: 2, texto: "Semáforo emocional 2 ciclos", accion: "pausa"},
             {id: 3, texto: "Postura de superhéroe 1 minuto", accion: "postura"},
-            {id: 4, texto: "Usar la caja de calma 20 segundos", accion: "sensorial"},
+            {id: 4, texto: "Caja de calma 20 segundos", accion: "sensorial"},
             {id: 5, texto: "Globo gigante 5 respiraciones", accion: "respirar"},
             {id: 6, texto: "Robot y gelatina 3 ciclos", accion: "tensar"},
             {id: 7, texto: "Escribir 1 misión en el diario", accion: "escribir"},
@@ -517,10 +479,10 @@
         ];
 
         function generarMisionDiaria() {
-            const random = Math.floor(Math.random() * MISIONES.length);
+            const r = Math.floor(Math.random() * MISIONES.length);
             return {
                 fecha: new Date().toISOString().split("T")[0],
-                ...MISIONES[random],
+                ...MISIONES[r],
                 completada: false
             };
         }
@@ -529,20 +491,23 @@
             const tip = TIP_EXPLICACIONES[tipId];
             document.getElementById("modalTitulo").textContent = tip.titulo;
             document.getElementById("modalTexto").textContent = tip.texto;
-            const btn = document.getElementById("modalAccion");
-            btn.onclick = () => ejecutarAccion(tip.accion);
+            document.getElementById("modalAccion").onclick = () => ejecutarAccion(tip.accion);
             document.getElementById("modal").style.display = "flex";
         }
-        function cerrarModal() {document.getElementById("modal").style.display = "none";}
+
+        function cerrarModal() {
+            document.getElementById("modal").style.display = "none";
+        }
+
         function ejecutarAccion(tipo) {
             switch (tipo) {
                 case "respirar": alert("Respirá 4 segundos, exhalá 6."); break;
-                case "pausa": alert("Pausa de 10 segundos, quieto y respirando."); break;
+                case "pausa": alert("Pausa de 10 segundos."); break;
                 case "postura": alert("Postura de superhéroe durante 1 minuto."); break;
-                case "sensorial": alert("Elegí un objeto que te calme y sostenelo 20 segundos."); break;
-                case "tensar": alert("Tensá todo el cuerpo 5 segundos y soltalo."); break;
-                case "escribir": alert("Escribí una misión épica de tu día."); break;
-                case "cronometro": alert("Cronómetro mental: 60 segundos de calma."); break;
+                case "sensorial": alert("Elegí un objeto que te calme."); break;
+                case "tensar": alert("Tensá 5 segundos y soltá."); break;
+                case "escribir": alert("Escribí tu misión del día."); break;
+                case "cronometro": alert("60 segundos de calma."); break;
             }
         }
 
@@ -556,133 +521,28 @@
         const xpLabel = document.getElementById("xpLabel");
         const xpFill = document.getElementById("xpFill");
         const userStatus = document.getElementById("userStatus");
-        const btnRespira = document.getElementById("btnRespira");
-        const btnStart = document.getElementById("btnStart");
-        const btnExit = document.getElementById("btnExit");
 
+        /* 🔥 LLAMADAS A GITHUB ACTIONS */
         async function getCloudData() {
-            const res = await fetch("/api/getProgreso");
-            return await res.json();
-        }
-        async function saveCloudData(newData, sha) {
-            await fetch("/api/setProgreso", {
-                method: "POST",
-                headers: {"Content-Type": "application/json"},
-                body: JSON.stringify({newData, sha})
-            });
+            const res = await fetch(
+                "https://api.github.com/repos/gabrielrpalavecino-dotcom/relajacion/contents/data/progreso.json",
+                {headers: {"Accept": "application/vnd.github+json"}}
+            );
+            const data = await res.json();
+            return JSON.parse(atob(data.content));
         }
 
-        function mostrarMision(mision) {
-            document.getElementById("misionTexto").textContent = mision.texto;
-            document.getElementById("misionEstado").textContent = mision.completada ? "Completada" : "Pendiente";
-        }
-
-        async function cargarMisionDiaria(userId) {
-            const cloud = await getCloudData();
-            const user = cloud.json[userId];
-            const hoy = new Date().toISOString().split("T")[0];
-
-            if (!user.misionDiaria || user.misionDiaria.fecha !== hoy) {
-                user.misionDiaria = generarMisionDiaria();
-                await saveCloudData(cloud.json, cloud.sha);
-            }
-            mostrarMision(user.misionDiaria);
-        }
-
-        async function completarMision(userId) {
-            const cloud = await getCloudData();
-            const user = cloud.json[userId];
-            if (!user.misionDiaria.completada) {
-                user.misionDiaria.completada = true;
-                user.xp += 20;
-                await saveCloudData(cloud.json, cloud.sha);
-            }
-            mostrarMision(user.misionDiaria);
-        }
-
-        function renderForUser(userId, userData) {
-            const completed = userData.completed || [];
-            const xp = userData.xp || 0;
-
-            document.querySelectorAll(".level-card").forEach(card => {
-                const lvl = parseInt(card.dataset.level, 10);
-                card.classList.toggle("completed", completed.includes(lvl));
-            });
-
-            const totalLevels = document.querySelectorAll(".level-card").length;
-            const done = completed.length;
-            const percent = (done / totalLevels) * 100;
-
-            progressFill.style.width = percent + "%";
-            levelLabel.textContent = "Nivel " + done;
-            levelCount.textContent = `${done} / ${totalLevels}`;
-            xpLabel.textContent = "XP " + xp;
-            xpFill.style.width = Math.min(xp, 100) + "%";
-            userStatus.textContent = `Usuario: ${users[userId]} · Progreso: ${done} / ${totalLevels}`;
-        }
-
-        async function loadUserProgress(userId) {
-            const cloud = await getCloudData();
-            if (!cloud.json[userId]) {
-                cloud.json[userId] = {nombre: users[userId], completed: [], xp: 0, misionDiaria: null};
-                await saveCloudData(cloud.json, cloud.sha);
-            }
-            renderForUser(userId, cloud.json[userId]);
-        }
-
-        async function updateUserProgress(userId, updateFn) {
-            const cloud = await getCloudData();
-            if (!cloud.json[userId]) {
-                cloud.json[userId] = {nombre: users[userId], completed: [], xp: 0, misionDiaria: null};
-            }
-            updateFn(cloud.json[userId]);
-            await saveCloudData(cloud.json, cloud.sha);
-            renderForUser(userId, cloud.json[userId]);
-        }
-
-        userSelect.addEventListener("change", () => {
-            loadUserProgress(userSelect.value);
-            cargarMisionDiaria(userSelect.value);
-        });
-
-        levelsGrid.addEventListener("click", e => {
-            const card = e.target.closest(".level-card");
-            if (!card) return;
-            const lvl = parseInt(card.dataset.level, 10);
-            const userId = userSelect.value;
-
-            abrirModal(lvl);
-
-            updateUserProgress(userId, userData => {
-                const completed = userData.completed || [];
-                if (!completed.includes(lvl)) {
-                    completed.push(lvl);
-                    userData.xp = (userData.xp || 0) + 10;
-                }
-                userData.completed = completed;
-            });
-
-            completarMision(userId);
-        });
-
-        btnRespira.addEventListener("click", () => {
-            const userId = userSelect.value;
-            updateUserProgress(userId, userData => {
-                userData.xp = (userData.xp || 0) + 5;
-            });
-        });
-
-        btnStart.addEventListener("click", () => {
-            alert("Empezamos la misión de calma para " + users[userSelect.value]);
-        });
-
-        btnExit.addEventListener("click", () => {
-            alert("Fin de sesión para " + users[userSelect.value]);
-        });
-
-        loadUserProgress(userSelect.value);
-        cargarMisionDiaria(userSelect.value);
-    </script>
-</body>
-
-</html>
+        async function saveCloudData(newData) {
+            await fetch(
+                "https://api.github.com/repos/gabrielrpalavecino-dotcom/relajacion/actions/workflows/update.yml/dispatches",
+                {
+                    method: "POST",
+                    headers: {
+                        "Accept": "application/vnd.github+json",
+                        "Authorization": "Bearer GH_TOKEN_REEMPLAZAR"
+                    },
+                    body: JSON.stringify({
+                        ref: "main",
+                        inputs: {
+                            userId: "1",
+                            newData
