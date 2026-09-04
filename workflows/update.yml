@@ -1,0 +1,36 @@
+name: Actualizar progreso
+
+on:
+  workflow_dispatch:
+    inputs:
+      userId:
+        description: "ID del usuario"
+        required: true
+      newData:
+        description: "Nuevo JSON"
+        required: true
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+
+    env:
+      GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+      GITHUB_USER: tu_usuario
+      GITHUB_REPO: tu_repo
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Actualizar progreso.json
+        run: |
+          echo '${{ github.event.inputs.newData }}' > data/progreso.json
+
+      - name: Commit y push
+        run: |
+          git config user.name "GitHub Action"
+          git config user.email "actions@github.com"
+          git add data/progreso.json
+          git commit -m "Actualización de progreso para usuario ${{ github.event.inputs.userId }}"
+          git push https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_USER}/${GITHUB_REPO}.git

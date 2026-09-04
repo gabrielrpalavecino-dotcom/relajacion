@@ -1,0 +1,26 @@
+{
+    "1": {
+        "nombre": "Papa",
+        "completed": [],
+        "xp": 0,
+        "misionDiaria": null
+    },
+    "2": {
+        "nombre": "Mama",
+        "completed": [],
+        "xp": 0,
+        "misionDiaria": null
+    },
+    "3": {
+        "nombre": "Romeo",
+        "completed": [],
+        "xp": 0,
+        "misionDiaria": null
+    },
+    "4": {
+        "nombre": "Avril",
+        "completed": [],
+        "xp": 0,
+        "misionDiaria": null
+    }
+}
