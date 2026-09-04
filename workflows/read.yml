@@ -9,8 +9,8 @@ jobs:
 
     env:
       GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-      GITHUB_USER: tu_usuario
-      GITHUB_REPO: tu_repo
+      GITHUB_USER: gabrielrpalavecino-dotcom
+      GITHUB_REPO: relajacion
 
     steps:
       - uses: actions/checkout@v3
